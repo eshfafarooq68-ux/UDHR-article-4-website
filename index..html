@@ -1,0 +1,356 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Article 4 — Freedom from Slavery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Serif:ital@0;1&family=Public+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: a single document-like column. The sentence of Article 4 is the hero and the only control; everything else is reference material set in a narrow reading measure with one wide chart. */
+:root {
+  --bg: #eef1f5;
+  --surface: #ffffff;
+  --ink: #14213d;
+  --muted: #536079;
+  --line: #cbd4e0;
+  --accent: #c2410c;
+  --accent-soft: #fbe6dc;
+  --font-display: "Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --font-body: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d1626;
+    --surface: #15233a;
+    --ink: #e8edf5;
+    --muted: #9aa9c0;
+    --line: #2a3b57;
+    --accent: #ff8a5c;
+    --accent-soft: #3a2420;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0d1626;
+  --surface: #15233a;
+  --ink: #e8edf5;
+  --muted: #9aa9c0;
+  --line: #2a3b57;
+  --accent: #ff8a5c;
+  --accent-soft: #3a2420;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  padding-inline: 1rem;
+  padding-block: 0;
+}
+.wrap { max-width: 68rem; margin-inline: auto; }
+a { color: var(--ink); text-decoration-color: var(--accent); text-underline-offset: 3px; }
+a:hover { color: var(--accent); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+h1, h2, h3 { font-family: var(--font-display); font-weight: 400; line-height: 1.05; text-wrap: balance; margin: 0; }
+h2 { font-size: clamp(2rem, 5vw, 3rem); }
+h3 { font-size: 1.6rem; }
+p { margin: 0; }
+
+/* Hero */
+.hero { padding-block: 3rem 3.5rem; border-bottom: 1px solid var(--line); }
+.chain { display: block; width: min(22rem, 100%); height: auto; margin-bottom: 2rem; }
+.chain .ring { fill: none; stroke: var(--ink); stroke-width: 5; }
+.chain .broken { fill: none; stroke: var(--accent); stroke-width: 5; stroke-linecap: round; }
+.hero h1 { font-size: clamp(3.2rem, 11vw, 7.5rem); letter-spacing: -0.015em; margin-block: 0.6rem 2rem; }
+.hero h1 em { color: var(--accent); }
+
+.sentence {
+  font-family: var(--font-display);
+  font-size: clamp(1.7rem, 4.6vw, 2.9rem);
+  line-height: 1.25;
+  max-width: 24em;
+  text-wrap: pretty;
+}
+.sentence button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0 0.12em;
+  margin: 0;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-decoration-color: var(--line);
+  text-underline-offset: 0.18em;
+  border-radius: 3px;
+  transition: background-color 0.15s, text-decoration-color 0.15s;
+}
+.sentence button:hover { text-decoration-color: var(--accent); }
+.sentence button[aria-pressed="true"] {
+  background: var(--accent-soft);
+  text-decoration-color: var(--accent);
+}
+.hint { margin-top: 1.25rem; }
+
+.panel {
+  margin-top: 1.5rem;
+  max-width: 44rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  padding: 1.25rem 1.5rem 1.5rem;
+  display: grid;
+  gap: 0.6rem;
+}
+.panel h3 { font-style: italic; }
+.panel p { color: var(--ink); max-width: 38rem; }
+
+/* Sections */
+section { padding-block: 4rem; border-bottom: 1px solid var(--line); }
+.head { display: grid; gap: 0.75rem; margin-bottom: 2.25rem; }
+.head p { color: var(--muted); max-width: 40rem; }
+
+.terms { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1.5rem; }
+.term { border-top: 2px solid var(--ink); padding-top: 1rem; display: grid; gap: 0.6rem; align-content: start; min-width: 0; }
+.term p { color: var(--muted); }
+.term .label { color: var(--accent); }
+
+/* Timeline */
+.timeline { list-style: none; margin: 0; padding: 0; display: grid; }
+.timeline li {
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr);
+  gap: 1.25rem;
+  padding-block: 1.1rem;
+  border-top: 1px solid var(--line);
+}
+.timeline li:last-child { border-bottom: 1px solid var(--line); }
+.timeline .yr { font-family: var(--font-mono); font-weight: 500; font-size: 1.05rem; }
+.timeline .here .yr { color: var(--accent); }
+.timeline .here { background: var(--accent-soft); margin-inline: -0.75rem; padding-inline: 0.75rem; }
+.timeline strong { font-weight: 600; }
+.timeline p { color: var(--muted); max-width: 42rem; }
+.timeline strong + p { margin-top: 0.15rem; }
+
+/* Today */
+.big { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5rem 1.25rem; margin-bottom: 2rem; }
+.big .num { font-family: var(--font-display); font-size: clamp(4rem, 14vw, 8rem); line-height: 0.9; color: var(--accent); font-variant-numeric: tabular-nums; }
+.big p { max-width: 24rem; color: var(--muted); min-width: 0; }
+.bars { display: grid; gap: 1rem; max-width: 46rem; }
+.bar { display: grid; gap: 0.35rem; }
+.bar .row { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.bar .val { font-family: var(--font-mono); font-variant-numeric: tabular-nums; font-weight: 500; }
+.bar .track { height: 0.9rem; background: var(--line); border-radius: 2px; overflow: hidden; }
+.bar .fill { height: 100%; background: var(--ink); }
+.bar:first-child .fill { background: var(--accent); }
+.note { margin-top: 1.5rem; max-width: 46rem; color: var(--muted); font-size: 0.9rem; }
+
+/* Signs */
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); gap: 2.5rem; }
+.two > div { min-width: 0; }
+.two h3 { margin-bottom: 1rem; }
+.list { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.9rem; }
+.list li { padding-left: 1.25rem; position: relative; }
+.list li::before { content: ""; position: absolute; left: 0; top: 0.7em; width: 0.5rem; height: 2px; background: var(--accent); }
+.list b { font-weight: 600; }
+.list span { color: var(--muted); }
+
+footer { padding-block: 3rem 4rem; display: grid; gap: 1rem; color: var(--muted); font-size: 0.9rem; }
+footer ul { margin: 0; padding-left: 1.1rem; display: grid; gap: 0.35rem; }
+footer p { max-width: 44rem; }
+
+@media (max-width: 30rem) {
+  .timeline li { grid-template-columns: 3.6rem minmax(0, 1fr); gap: 0.9rem; }
+  section { padding-block: 3rem; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header class="hero">
+    <svg class="chain" viewBox="0 0 560 64" role="img" aria-label="A chain of rings with one ring broken open" xmlns="http://www.w3.org/2000/svg">
+      <rect class="ring" x="4" y="12" width="90" height="40" rx="20"/>
+      <rect class="ring" x="70" y="12" width="90" height="40" rx="20"/>
+      <rect class="ring" x="136" y="12" width="90" height="40" rx="20"/>
+      <rect class="ring" x="202" y="12" width="90" height="40" rx="20"/>
+      <rect class="broken" x="268" y="12" width="90" height="40" rx="20" pathLength="100" stroke-dasharray="44 12 44" transform="rotate(14 313 32)"/>
+      <rect class="ring" x="334" y="12" width="90" height="40" rx="20" transform="translate(8 6)"/>
+      <rect class="ring" x="400" y="12" width="90" height="40" rx="20" transform="translate(14 10)"/>
+    </svg>
+    <p class="label">Universal Declaration of Human Rights &middot; Article 4</p>
+    <h1>Freedom from <em>slavery</em></h1>
+
+    <p class="sentence" id="sentence">
+      <button type="button" data-k="0" aria-pressed="true">No one</button>
+      <button type="button" data-k="1" aria-pressed="false">shall be held in slavery</button>
+      <button type="button" data-k="2" aria-pressed="false">or servitude;</button>
+      <button type="button" data-k="3" aria-pressed="false">slavery and the slave trade shall be prohibited</button>
+      <button type="button" data-k="4" aria-pressed="false">in all their forms.</button>
+    </p>
+    <p class="label hint">Select a phrase to see what it means</p>
+
+    <div class="panel" id="panel" aria-live="polite">
+      <h3 id="panel-title"></h3>
+      <p id="panel-text"></p>
+    </div>
+  </header>
+
+  <section>
+    <div class="head">
+      <p class="label">Three words, three meanings</p>
+      <h2>Slavery, servitude and the slave trade</h2>
+      <p>Article 4 uses each term on purpose. They overlap, but each one was defined by a separate body of international law.</p>
+    </div>
+    <div class="terms">
+      <div class="term">
+        <p class="label">Slavery</p>
+        <h3>Ownership over a person</h3>
+        <p>The 1926 Slavery Convention defines it as the status of a person over whom any or all of the powers attached to the right of ownership are exercised. The test is control, not paperwork.</p>
+      </div>
+      <div class="term">
+        <p class="label">Servitude</p>
+        <h3>Unfree, without ownership</h3>
+        <p>The 1956 Supplementary Convention covers debt bondage, serfdom, forced marriage, and handing over a child to be exploited. The person is not legally owned, but cannot leave.</p>
+      </div>
+      <div class="term">
+        <p class="label">Slave trade</p>
+        <h3>Moving people for sale</h3>
+        <p>Capturing, acquiring or disposing of a person to enslave them, and every act of buying, selling or transporting an enslaved person. Modern law treats human trafficking as its closest relative.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="head">
+      <p class="label">How the ban was built</p>
+      <h2>A prohibition that took two centuries</h2>
+      <p>The Declaration of 1948 did not start the movement. It put an existing rule into the first global statement of human rights.</p>
+    </div>
+    <ol class="timeline">
+      <li><span class="yr">1807</span><div><strong>The United Kingdom outlaws the slave trade</strong><p>The Slave Trade Act bans trading in enslaved people across the British Empire.</p></div></li>
+      <li><span class="yr">1833</span><div><strong>The Slavery Abolition Act</strong><p>Passed by the UK Parliament and in force from 1834, it ends slavery across most of the empire, with payment to former owners rather than to the people freed.</p></div></li>
+      <li><span class="yr">1865</span><div><strong>The US Thirteenth Amendment</strong><p>It abolishes slavery in the United States, with an exception for punishment of a crime.</p></div></li>
+      <li><span class="yr">1888</span><div><strong>Brazil ends slavery</strong><p>It is the last country in the Americas to do so.</p></div></li>
+      <li><span class="yr">1926</span><div><strong>The Slavery Convention</strong><p>The League of Nations adopts the first international definition of slavery.</p></div></li>
+      <li><span class="yr">1930</span><div><strong>ILO Forced Labour Convention (No. 29)</strong><p>Requires states to suppress forced or compulsory labour.</p></div></li>
+      <li class="here"><span class="yr">1948</span><div><strong>Article 4 of the Universal Declaration</strong><p>The UN General Assembly adopts the Declaration in Paris on 10 December, with no country voting against it.</p></div></li>
+      <li><span class="yr">1956</span><div><strong>The Supplementary Convention</strong><p>Extends the ban to debt bondage, serfdom and similar practices.</p></div></li>
+      <li><span class="yr">1966</span><div><strong>The Covenant on Civil and Political Rights</strong><p>Article 8 turns the ban into a treaty duty. It entered into force in 1976 and states cannot suspend it, even in an emergency.</p></div></li>
+      <li><span class="yr">2000</span><div><strong>The Palermo Protocol</strong><p>The first international definition of human trafficking, adopted as part of the UN convention against organized crime.</p></div></li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="head">
+      <p class="label">Where things stand</p>
+      <h2>The ban is universal. The practice is not gone.</h2>
+    </div>
+    <div class="big">
+      <span class="num">49.6M</span>
+      <p>people lived in modern slavery on any given day in 2021, according to estimates from the ILO, Walk Free and the IOM.</p>
+    </div>
+    <div class="bars" role="list">
+      <div class="bar" role="listitem">
+        <div class="row"><span>Forced marriage</span><span class="val">22.0M</span></div>
+        <div class="track"><div class="fill" style="width:100%"></div></div>
+      </div>
+      <div class="bar" role="listitem">
+        <div class="row"><span>Forced labour in the private economy</span><span class="val">17.3M</span></div>
+        <div class="track"><div class="fill" style="width:78.6%"></div></div>
+      </div>
+      <div class="bar" role="listitem">
+        <div class="row"><span>Forced commercial sexual exploitation</span><span class="val">6.3M</span></div>
+        <div class="track"><div class="fill" style="width:28.6%"></div></div>
+      </div>
+      <div class="bar" role="listitem">
+        <div class="row"><span>Forced labour imposed by state authorities</span><span class="val">3.9M</span></div>
+        <div class="track"><div class="fill" style="width:17.7%"></div></div>
+      </div>
+    </div>
+    <p class="note">Bars share one scale. Figures are rounded, so the parts differ slightly from the total. About 3.3 million of the 27.6 million people in forced labour were children. The ILO and its partners publish new estimates periodically, so check for a more recent edition.</p>
+  </section>
+
+  <section>
+    <div class="head">
+      <p class="label">Recognising it</p>
+      <h2>What the ban means in practice</h2>
+    </div>
+    <div class="two">
+      <div>
+        <h3>Signs of forced labour</h3>
+        <p class="label" style="margin-bottom:1rem">From the ILO's list of indicators</p>
+        <ul class="list">
+          <li><b>Withheld wages.</b> <span>Pay is delayed, cut or never given.</span></li>
+          <li><b>Held documents.</b> <span>An employer keeps a passport or identity card.</span></li>
+          <li><b>Debt bondage.</b> <span>A debt for recruitment, transport or housing that never shrinks.</span></li>
+          <li><b>Restricted movement.</b> <span>The worker is locked in, watched, or cut off from family.</span></li>
+          <li><b>Threats and violence.</b> <span>Including threats of reporting someone to the authorities.</span></li>
+          <li><b>Deception.</b> <span>The job, pay or conditions differ from what was promised.</span></li>
+        </ul>
+      </div>
+      <div>
+        <h3>What states are asked to do</h3>
+        <p class="label" style="margin-bottom:1rem">Duties that follow from Article 4</p>
+        <ul class="list">
+          <li><b>Criminalise it.</b> <span>Make slavery, servitude, trafficking and forced labour punishable offences.</span></li>
+          <li><b>Investigate and prosecute.</b> <span>Enforce the law against traffickers and abusive employers.</span></li>
+          <li><b>Protect people.</b> <span>Identify victims, shelter them, and avoid punishing them for acts they were forced to commit.</span></li>
+          <li><b>Prevent it.</b> <span>Regulate recruiters, inspect workplaces and address the poverty that makes people vulnerable.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p class="label">Sources and further reading</p>
+    <ul>
+      <li><a href="https://www.un.org/en/about-us/universal-declaration-of-human-rights" target="_blank" rel="noopener">United Nations: the Universal Declaration of Human Rights</a></li>
+      <li><a href="https://www.un.org/en/delegate/50-million-people-modern-slavery-un-report" target="_blank" rel="noopener">United Nations: 50 million people in modern slavery</a></li>
+      <li><a href="https://www.walkfree.org/projects/global-estimates-of-modern-slavery/" target="_blank" rel="noopener">Walk Free: Global Estimates of Modern Slavery</a></li>
+      <li><a href="https://www.ilo.org/resource/news/50-million-people-worldwide-modern-slavery-0" target="_blank" rel="noopener">International Labour Organization: modern slavery</a></li>
+    </ul>
+    <p>The Declaration is not a treaty, but the ban on slavery is also found in binding treaties and is widely regarded as a rule that applies to every state. This page is an educational summary, not legal advice.</p>
+  </footer>
+</div>
+
+<script>
+(function () {
+  var items = [
+    { t: "No one", p: "The sentence has no exceptions. It covers citizens and foreigners, adults and children, and people in lawful jobs as well as people working out of sight. Article 2 of the Declaration says every right applies regardless of race, sex, religion, origin or status." },
+    { t: "Held in slavery", p: "Slavery means another person exercises the powers of ownership over you. It does not depend on a certificate of sale. If someone can buy, sell, command and keep you, the condition is slavery whatever it is called locally." },
+    { t: "Servitude", p: "Servitude is a wider category of unfree conditions that fall short of legal ownership: debt bondage, serfdom, forced marriage, and the delivery of a child to be exploited. Including it closes a gap that a narrow reading of slavery would leave open." },
+    { t: "Prohibited", p: "The verb changes here. The first clause protects each person. This one places a duty on states: slavery and the slave trade must be banned in law, and the ban must be enforced. The slave trade covers capturing, buying, selling and transporting people." },
+    { t: "In all their forms", p: "These four words stop a practice from escaping the rule by taking a new name. Today the forms include forced labour, debt bondage, forced marriage, and trafficking. The test is the condition of the person, not the label on it." }
+  ];
+  var buttons = document.querySelectorAll("#sentence button");
+  var title = document.getElementById("panel-title");
+  var text = document.getElementById("panel-text");
+  function show(k) {
+    for (var i = 0; i < buttons.length; i++) {
+      buttons[i].setAttribute("aria-pressed", String(i === k));
+    }
+    title.textContent = items[k].t;
+    text.textContent = items[k].p;
+  }
+  for (var i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener("click", function () {
+      show(parseInt(this.getAttribute("data-k"), 10));
+    });
+  }
+  show(0);
+})();
+</script>
+
+</body></html>
